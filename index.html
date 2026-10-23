@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pakistan Live Weather GIS Dashboard</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Pakistan Live Weather Web GIS</h1>
+        <p>Real-time Weather Data from WeatherAPI.com integrated with Leaflet Map</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Sidebar Controls & Info Panel -->
+        <aside class="sidebar">
+            <section class="control-panel">
+                <h2>Location Controls</h2>
+                
+                <div class="form-group">
+                    <label for="city-select">Select City / Area:</label>
+                    <select id="city-select">
+                        <option value="Islamabad">Islamabad</option>
+                        <option value="Rawalpindi">Rawalpindi</option>
+                        <option value="Lahore">Lahore</option>
+                        <option value="Karachi">Karachi</option>
+                        <option value="Peshawar">Peshawar</option>
+                        <option value="Quetta">Quetta</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="search-input">Search Filter:</label>
+                    <input type="text" id="search-input" placeholder="Filter by city name...">
+                </div>
+
+                <button id="fetch-btn">Fetch Live Weather</button>
+                <div id="status-message" class="status">Click "Fetch Live Weather" to load.</div>
+            </section>
+
+            <!-- Feature Info Panel -->
+            <section class="info-panel">
+                <h2>Weather Details</h2>
+                <div id="feature-details">
+                    <p><em>Click on a map marker to view detailed weather information here.</em></p>
+                </div>
+            </section>
+
+            <!-- Study Area & Attribution -->
+            <section class="attribution-panel">
+                <h3>Study Area Description</h3>
+                <p><strong>Region:</strong> Islamabad, Rawalpindi & major cities across Pakistan.</p>
+                <p><strong>API Source:</strong> WeatherAPI.com (Realtime Weather Endpoint).</p>
+                <p><strong>Mapping Library:</strong> Leaflet.js</p>
+            </section>
+        </aside>
+
+        <!-- Map Canvas -->
+        <main class="map-container">
+            <div id="map"></div>
+        </main>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
